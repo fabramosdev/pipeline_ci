@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :pipeline_ci, PipelineCi.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "pipelineci",
+  password: "pipelineci",
   hostname: "localhost",
   database: "pipeline_ci_dev",
   show_sensitive_data_on_connection_error: true,
