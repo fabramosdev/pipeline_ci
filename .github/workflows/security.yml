@@ -3,7 +3,7 @@ name: Verify Security
 on: pull_request
 
 jobs:
-  secutity:
+  security:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,7 +21,7 @@ jobs:
           path: deps
           key: ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-${{ hashFiles(format('{0}{1}', github.worlspace, '/mix.lock')) }}
       - name: Install Mix Dependencies
-        if: steps.mix-cache-format.outputs.cache-hit != 'true'
+        if: steps.mix-cache-security.outputs.cache-hit != 'true'
         run: mix deps.get
       - name: ===> Security
         run: mix sobelow --config
